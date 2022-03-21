@@ -1,14 +1,14 @@
 package learn.servlet;
 
 
+import jakarta.servlet.ServletConfig;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
-
-import javax.servlet.ServletConfig;
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -22,7 +22,7 @@ import static org.mockito.Mockito.when;
 @Slf4j
 public class MyServletTest {
     @Test
-    public void testServlet() throws IOException {
+    public void testServlet() throws IOException, ServletException {
 
         MyServlet myServlet = new MyServlet();
         myServlet.init(new ServletConfig() {

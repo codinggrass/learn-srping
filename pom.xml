@@ -10,6 +10,7 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>spring-servlet</module>
+        <module>learn-webapp</module>
     </modules>
 
 </project>
