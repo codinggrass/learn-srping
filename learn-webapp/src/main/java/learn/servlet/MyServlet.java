@@ -14,7 +14,6 @@ import java.io.Serializable;
  * @Date 2022/3/19 11:04
  * @Version 1.0
  */
-//@WebServlet(name = "MyServlet", urlPatterns = "/my")
 public class MyServlet implements Servlet, Serializable {
 
     private transient ServletConfig servletConfig;
