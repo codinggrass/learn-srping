@@ -4,16 +4,19 @@ import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
 
+import static javafx.scene.input.KeyCode.X;
+
 /**
  * @ClassName AppListener
  * @Description ServletContextListener 提供监听context初始化以及销毁事件执行的接口
- * @Author codegrass
+ * @Author Code Grass
  * @Date 2022/3/30 22:31
  * @Version 1.0
  */
@@ -21,8 +24,10 @@ import java.util.Map;
 @Slf4j
 public class AppListener implements ServletContextListener {
 
+    @SneakyThrows
     @Override
     public void contextInitialized(ServletContextEvent sce) {
+
         Map<String, String> countries = new HashMap<>();
         countries.put("cn", "China");
         countries.put("us", "United States");
