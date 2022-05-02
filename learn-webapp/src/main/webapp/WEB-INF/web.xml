@@ -45,11 +45,22 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
         <filter-name>ImageProtectFilter</filter-name>
         <filter-class>learn.filter.ImageProtectFilter</filter-class>
     </filter>
+
+
     <filter-mapping>
         <filter-name>ImageProtectFilter</filter-name>
         <url-pattern>*.png</url-pattern>
         <url-pattern>*.jpg</url-pattern>
         <url-pattern>*.gif</url-pattern>
+    </filter-mapping>
+
+    <filter>
+        <filter-name>DownloadCounterFilter</filter-name>
+        <filter-class>learn.filter.DownloadCounterFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>DownloadCounterFilter</filter-name>
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
 
 </web-app>
