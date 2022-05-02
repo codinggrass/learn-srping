@@ -74,6 +74,38 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!-- 安全认证 -->
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Servlet1</web-resource-name>
+            <url-pattern>/servlet1</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>member</role-name>
+            <role-name>manager</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <!--    表单认证访问-->
+<!--    <login-config>-->
+<!--        <auth-method>FORM</auth-method>-->
+<!--        <form-login-config>-->
+<!--            <form-login-page>/login.html</form-login-page>-->
+<!--            <form-error-page>/error.html</form-error-page>-->
+<!--        </form-login-config>-->
+<!--    </login-config>-->
+
+    <!--    摘要访问认证-->
+    <login-config>
+        <auth-method>DIGEST</auth-method>
+        <realm-name>Digest authentication</realm-name>
+    </login-config>
+
+    <!-- 基础访问认证 -->
+    <!--    <login-config>-->
+    <!--        <auth-method>BASIC</auth-method>-->
+    <!--        <realm-name>Members Only</realm-name>-->
+    <!--    </login-config>-->
 
 
 </web-app>
