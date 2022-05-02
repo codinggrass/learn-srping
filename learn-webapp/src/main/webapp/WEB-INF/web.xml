@@ -5,6 +5,8 @@
 http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0"
          metadata-complete="false">
+    <!--version 指明servlet版本-->
+    <!--metadata-complete false表示web.xml是不完整的，还会检查servlet注解-->
 
     <display-name>Archetype Created Web Application</display-name>
 
@@ -87,13 +89,13 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
     </security-constraint>
 
     <!--    表单认证访问-->
-<!--    <login-config>-->
-<!--        <auth-method>FORM</auth-method>-->
-<!--        <form-login-config>-->
-<!--            <form-login-page>/login.html</form-login-page>-->
-<!--            <form-error-page>/error.html</form-error-page>-->
-<!--        </form-login-config>-->
-<!--    </login-config>-->
+    <!--    <login-config>-->
+    <!--        <auth-method>FORM</auth-method>-->
+    <!--        <form-login-config>-->
+    <!--            <form-login-page>/login.html</form-login-page>-->
+    <!--            <form-error-page>/error.html</form-error-page>-->
+    <!--        </form-login-config>-->
+    <!--    </login-config>-->
 
     <!--    摘要访问认证-->
     <login-config>
@@ -107,5 +109,14 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
     <!--        <realm-name>Members Only</realm-name>-->
     <!--    </login-config>-->
 
-
+    <welcome-file-list>
+        <welcome-file>/index.jsp</welcome-file>
+    </welcome-file-list>
+    
+<!--    <locale-encoding-mapping-list>-->
+<!--        <locale-encoding-mapping>-->
+<!--            <locale>zh_CN</locale>-->
+<!--            <encoding>UTF-8</encoding>-->
+<!--        </locale-encoding-mapping>-->
+<!--    </locale-encoding-mapping-list>-->
 </web-app>
