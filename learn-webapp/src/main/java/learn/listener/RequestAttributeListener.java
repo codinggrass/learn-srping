@@ -17,12 +17,13 @@ import lombok.extern.slf4j.Slf4j;
 public class RequestAttributeListener implements ServletRequestAttributeListener {
     @Override
     public void attributeAdded(ServletRequestAttributeEvent srae) {
-        log.info("ServletRequest中属性{}新增,值为{}",srae.getName(),srae.getValue());
+        log.info("thead:" + Thread.currentThread().getName() + " ServletRequest中属性{}新增,值为{}", srae.getName(), srae.getValue());
     }
 
     @Override
     public void attributeRemoved(ServletRequestAttributeEvent srae) {
-        log.info("ServletRequest中属性{}删除,值为{}",srae.getName(),srae.getValue());
-
+        log.info("thead:" + Thread.currentThread().getName() +
+                " ServletRequest中属性{}删除,值为{}",
+                srae.getName(), srae.getValue());
     }
 }

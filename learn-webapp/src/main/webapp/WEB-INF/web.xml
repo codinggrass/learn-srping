@@ -8,9 +8,6 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 
     <display-name>Archetype Created Web Application</display-name>
 
-    <!--    <listener>-->
-    <!--        <listener-class>learn.listener.SessionListener</listener-class>-->
-    <!--    </listener>-->
 
     <servlet>
         <servlet-name>MyServlet</servlet-name>
@@ -23,9 +20,20 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
         <url-pattern>/MyServlet</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AsyncCompleteServlet</servlet-name>
+        <servlet-class>learn.servlet.asyn.AsyncCompleteServlet</servlet-class>
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AsyncCompleteServlet</servlet-name>
+        <url-pattern>/async/complete</url-pattern>
+    </servlet-mapping>
+
     <filter>
         <filter-name>LogFilter</filter-name>
         <filter-class>learn.filter.LogFilter</filter-class>
+        <async-supported>true</async-supported>
         <init-param>
             <param-name>logName</param-name>
             <param-value>request.log</param-value>
@@ -34,6 +42,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
             <param-name>preFix</param-name>
             <param-value>URI:</param-value>
         </init-param>
+
     </filter>
     <filter-mapping>
         <filter-name>LogFilter</filter-name>
@@ -44,6 +53,7 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
     <filter>
         <filter-name>ImageProtectFilter</filter-name>
         <filter-class>learn.filter.ImageProtectFilter</filter-class>
+        <async-supported>true</async-supported>
     </filter>
 
 
@@ -57,10 +67,13 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
     <filter>
         <filter-name>DownloadCounterFilter</filter-name>
         <filter-class>learn.filter.DownloadCounterFilter</filter-class>
+        <async-supported>true</async-supported>
     </filter>
     <filter-mapping>
         <filter-name>DownloadCounterFilter</filter-name>
         <url-pattern>/*</url-pattern>
     </filter-mapping>
+
+
 
 </web-app>

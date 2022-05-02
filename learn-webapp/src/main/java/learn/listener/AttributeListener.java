@@ -18,6 +18,7 @@ public class AttributeListener implements ServletContextAttributeListener {
 
     @Override
     public void attributeAdded(ServletContextAttributeEvent event) {
-        log.info("添加属性{}:{} ", event.getName(), event.getValue());
+        log.info("thead:" + Thread.currentThread().getName() +
+                " 添加属性{}:{} ", event.getName(), event.getValue());
     }
 }

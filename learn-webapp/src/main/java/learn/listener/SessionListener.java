@@ -38,7 +38,9 @@ public class SessionListener implements HttpSessionListener, ServletContextListe
         ServletContext servletContext = session.getServletContext();
         AtomicInteger sessionCount = (AtomicInteger) servletContext.getAttribute(SESSION_COUNT);
         int count = sessionCount.incrementAndGet();
-        log.info("a session created, session count is {}",count);
+        log.info("thead:" + Thread.currentThread().getName() +
+                        " a session created, session count is {}",
+                count);
     }
 
     @Override
@@ -48,6 +50,7 @@ public class SessionListener implements HttpSessionListener, ServletContextListe
         ServletContext servletContext = session.getServletContext();
         AtomicInteger atomicInteger = (AtomicInteger) servletContext.getAttribute(SESSION_COUNT);
         int count = atomicInteger.decrementAndGet();
-        log.info("a session destroyed, session count is {}",count);
+        log.info("thead:" + Thread.currentThread().getName() +
+                " a session destroyed, session count is {}", count);
     }
 }

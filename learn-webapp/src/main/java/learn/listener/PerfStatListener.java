@@ -33,8 +33,8 @@ public class PerfStatListener implements ServletRequestListener {
         long beginTime = (long) servletRequest.getAttribute("REQUEST_BEGIN_TIME");
         long endTime = System.currentTimeMillis();
         String uri = servletRequest.getRequestURI();
-
-        log.info("request {} time cost {} ms",
+        log.info("thead:" + Thread.currentThread().getName() +
+        " request {} time cost {} ms",
                 uri,
                 endTime - beginTime);
     }
